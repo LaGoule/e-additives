@@ -1,0 +1,8 @@
+.additive-item>ion-grid>ion-row>ion-col:first-child {
+    display: flex;
+    align-self: stretch;
+    justify-content: center;
+}
+.additive-item>ion-grid>ion-row>ion-col:first-child>ion-text {
+    align-self: center;
+}

@@ -1,10 +1,36 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>
-      {{ title }}
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/list"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      {{ title }} E{{ this.item?.id }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+  <ion-card *ngIf="this.item" color="dark" class="ion-text-center">
+    <ion-card-header [ngStyle]="{'background-color': this.item.level|dangerColor}">
+        <ion-text [ngStyle]="{'color': 'white'}">E{{ this.item.id }}</ion-text>
+    </ion-card-header>
+    <ion-card-content class="ion-margin-top">
+      <ion-text slot="start">
+        <!-- <ion-title>{{ this.item.name }}</ion-title>
+        <ion-note>{{ this.item.type }}</ion-note> -->
+        <h1>{{ this.item.name }}</h1>
+        <ion-note>{{ this.item.type }}</ion-note>
+      </ion-text>
+      <br/><br/>
+      <ion-text slot="end" [ngStyle]="{'color': this.item.level|dangerColor}">
+        {{ this.item.level|dangerTitle }}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="dark">
+    <ion-card-content class="ion-padding ion-text-center" >
+      <h2>Wikipedia</h2>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

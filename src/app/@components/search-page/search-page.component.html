@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar color="primary">
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
     <ion-title>
       {{ title }}
     </ion-title>
@@ -7,10 +7,25 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-item class="ion-padding-bottom">
-    <ion-label></ion-label>
-    <ion-input label="E" placeholder="133" ></ion-input>
-  </ion-item>
-
-  <ion-button shape="round" class="ion-align-center" fill="outline" size="small">Rechercher</ion-button>
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="8" class="ion-text-center">
+        <!-- <ion-card class="ion-padding"> -->
+          <ion-label size="lg" max-length="3"></ion-label>
+          <ion-input 
+            [(ngModel)]="searchInputValue" 
+            pattern=".{3,5}"
+            label="E" 
+            placeholder="133" 
+            fill="outline" 
+            class="ion-margin-bottom ion-text-left"
+          ></ion-input>
+          <ion-button mode="ios" shape="round" (click)="navigateToSearch(searchInputValue)">
+            <ion-text>Rechercher</ion-text>
+            <ion-icon slot="end" name="search" size="small"></ion-icon>
+          </ion-button>
+        <!-- </ion-card> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
