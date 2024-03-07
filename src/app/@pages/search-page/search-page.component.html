@@ -1,0 +1,36 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="md">
+    <ion-title>
+      {{ title }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="main-logo ion-align-items-center ion-justify-content-center">
+      <ion-col size="8" class="ion-text-center ion-margin-top ion-padding-top">
+        <ion-icon name="flask" size="large"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="8" class="ion-text-center ion-padding-bottom ion-margin-bottom">
+        <app-searchbar 
+          (sendInputChange)="searchInputChange($event)"
+          (sendNavigateTo)="receiveNavigateRequest($event)"
+        ></app-searchbar>
+          
+        <ion-button 
+          class="ion-margin-top"
+          mode="ios" 
+          shape="round"
+          (click)="navigateTo(this.searchInputValue)"
+        >
+          <ion-text>Rechercher</ion-text>
+          <ion-icon slot="end" name="search" size="small"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row></ion-row>
+  </ion-grid>
+</ion-content>

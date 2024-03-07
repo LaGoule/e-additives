@@ -7,8 +7,6 @@ import { addIcons } from 'ionicons';
 import { chevronForwardOutline } from 'ionicons/icons';
 import { DatabaseService } from '../../@services/database.service';
 addIcons({ chevronForwardOutline });
-
-
 @Component({
   selector: 'app-list-page',
   templateUrl: './list-page.component.html',
@@ -25,9 +23,11 @@ export class ListPageComponent {
   title="Liste des additifs"
   items!: Promise<any[]>;
 
-  DEFAULT_MAX_ITEMS_TO_SHOW = 30;
-  maxItemsToShow = this.DEFAULT_MAX_ITEMS_TO_SHOW;
+  DEFAULT_MAX_ITEMS_TO_SHOW = 50;
+  NB_SKELETON_ITEMS = 6;
   SKELETON_DELAY = 800;
+
+  maxItemsToShow = this.DEFAULT_MAX_ITEMS_TO_SHOW;
 
   constructor(
     private readonly _databaseService: DatabaseService

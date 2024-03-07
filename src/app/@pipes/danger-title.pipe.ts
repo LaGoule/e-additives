@@ -10,16 +10,16 @@ export class DangerTitlePipe implements PipeTransform {
     let title: string;
     switch (dangerLevel) {
       case '0': // Vert
-        title = 'Acceptable';
+        title = 'Sans risque';
         break;
       case '1': // Jaune
-        title = 'Rapports contradictoires';
+        title = 'Risque limité';
         break;
       case '2': // Orange
-        title = 'À risque';
+        title = 'Risque modéré';
         break;
       case '3': // Rouge
-        title = 'À éviter';
+        title = 'À risque';
         break;
       default:
         title = 'Non spécifié';

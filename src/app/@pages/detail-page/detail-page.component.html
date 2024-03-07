@@ -1,7 +1,7 @@
 <ion-header mode="ios">
   <ion-toolbar mode="md">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/list"></ion-back-button>
+      <ion-back-button defaultHref="/list" icon="chevron-back-outline"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-no-padding">
       {{ title }} E{{ this.item?.id }}
@@ -30,7 +30,11 @@
 
   <ion-card color="dark">
     <ion-card-content class="ion-padding ion-text-center" >
-      <h2>Wikipedia</h2>
+      
+      <a [href]="'https://fr.wikipedia.org/wiki/E' + this.item?.id" fill="clear" >
+        <ion-text [ngStyle]="{'padding-right':'5px', 'text-decoration':'underline'}">Wikipedia</ion-text>
+        <ion-icon name="open-outline" slot="end"></ion-icon>
+      </a>
     </ion-card-content>
   </ion-card>
 </ion-content>

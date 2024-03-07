@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { SearchPageComponent } from './@components/search-page/search-page.component';
-import { ListPageComponent } from './@components/list-page/list-page.component';
-import { DetailPageComponent } from './@components/detail-page/detail-page.component';
+import { SearchPageComponent } from './@pages/search-page/search-page.component';
+import { ListPageComponent } from './@pages/list-page/list-page.component';
+import { DetailPageComponent } from './@pages/detail-page/detail-page.component';
 import { preloadItemResolver } from './@resolvers/preload-item.resolver';
 
 export const routes: Routes = [

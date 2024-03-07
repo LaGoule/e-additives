@@ -1,0 +1,37 @@
+<ion-input 
+  [(ngModel)]="inputValue" 
+  (ionInput)="inputChange($event)"
+  
+  type="text"
+  pattern=".{3,4}"
+  label="E" 
+  placeholder="133" 
+  fill="outline" 
+  class="ion-text-left"
+>
+  <ion-icon 
+    *ngIf="this.inputValue.length > 0"
+    (click)="clearInputValue()"
+    slot="end" name="close-outline" size="small"
+  ></ion-icon>
+</ion-input>
+
+<!-- Autocomplete -->
+<ion-list
+  *ngIf="this.inputValue.trim().length > 0 && autocompleteResults.length > 0"
+  [ngStyle]="{ 'border-radius': '5px' }"
+  class="ion-no-padding"
+>
+  <ion-item 
+    *ngFor="let item of autocompleteResults" 
+    (click)="selectAutocompleteResult(item)"
+    class="ion-no-padding ion-padding-left"
+  >
+    <span 
+      class="colorDot" 
+      [ngStyle]="{ 'background-color': item.level|dangerColor }"
+    ></span>
+    <ion-label>E{{ item.id }}</ion-label>
+    <!-- <ion-title slot="end" >{{ item.name }}</ion-title> -->
+  </ion-item>
+</ion-list>

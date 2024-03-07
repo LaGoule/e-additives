@@ -4,7 +4,9 @@ import { IonicModule } from '@ionic/angular';
 import { Router, ActivatedRoute,  } from '@angular/router';
 import { DangerColorPipe } from '../../@pipes/danger-color.pipe';
 import { DangerTitlePipe } from '../../@pipes/danger-title.pipe';
-
+import { addIcons } from 'ionicons';
+import { chevronBackOutline, openOutline } from 'ionicons/icons';
+addIcons({ chevronBackOutline, openOutline});
 @Component({
   selector: 'app-detail-page',
   templateUrl: './detail-page.component.html',

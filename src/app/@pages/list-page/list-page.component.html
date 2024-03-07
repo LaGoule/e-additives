@@ -1,6 +1,9 @@
 <ion-header mode="ios">
   <ion-toolbar mode="md">
-    <ion-title>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="/search" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons> -->
+    <ion-title class="ion-padding-left">
       {{ title }}
     </ion-title>
   </ion-toolbar>
@@ -43,7 +46,7 @@
     *ngIf="maxItemsToShow <= ((items|async)?.length||0)"
     (ionInfinite)="onIonInfinite($event)">
     <ion-infinite-scroll-content loadingSpinner="none" loadingText="">
-      <ion-item *ngFor="let item of [].constructor(5)" class="ion-no-padding">
+      <ion-item *ngFor="let item of [].constructor(NB_SKELETON_ITEMS)" class="ion-no-padding">
         <ion-grid class="ion-no-padding">
           <ion-row class="ion-no-padding">
             <ion-col size="2" class="additives-id-container">
